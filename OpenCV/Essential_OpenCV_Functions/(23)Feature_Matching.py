@@ -1,3 +1,11 @@
+# Feature matching ka matlab hai do images ke similar points ya keypoints find karna.
+# ORB (Oriented FAST and Rotated BRIEF) algorithm fast aur efficient hai.
+# Steps:
+#   1. Detect keypoints & descriptors in both images
+#   2. Match descriptors using BFMatcher (Brute-Force)
+#   3. Draw matches
+
+
 import cv2
 import numpy as np
 

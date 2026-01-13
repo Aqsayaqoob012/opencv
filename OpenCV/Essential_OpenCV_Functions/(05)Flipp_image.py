@@ -1,3 +1,9 @@
+# Image flipping ka matlab hai image ko mirror karna.
+# OpenCV me `cv2.flip()` use hota hai:
+#   flipCode = 0  → Vertical flip (upar-niche)
+#   flipCode = 1  → Horizontal flip (left-right)
+#   flipCode = -1 → Dono axes flip
+
 import cv2
 image = cv2.imread('1.jpg')
 

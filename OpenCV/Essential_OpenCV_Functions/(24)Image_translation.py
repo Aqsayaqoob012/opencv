@@ -1,3 +1,8 @@
+# Image translation ka matlab hai image ko horizontal ya vertical direction me shift karna.
+# OpenCV me `cv2.warpAffine()` aur translation matrix use hota hai.
+# Translation matrix format: [[1, 0, tx], [0, 1, ty]] 
+# tx → horizontal shift, ty → vertical shift
+
 import cv2
 import numpy as np
 

@@ -1,10 +1,15 @@
-'''Image
-Text to be displayed
+# OpenCV me `cv2.putText()` use karke image par text add kar sakte hain.
+'''
+Required parameters:
+image,
+Text to be displayed,
 Bottom-left corner co-ordinates, from where the text should start
-Font
-Font size
-Color (BGR format)
-Line width '''
+font, 
+font scale (size), 
+color (BGR), 
+thickness, 
+line type
+'''
 
 import cv2
 image = cv2.imread('1.jpg')

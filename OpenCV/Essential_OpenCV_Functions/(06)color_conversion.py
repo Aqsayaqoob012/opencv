@@ -1,3 +1,10 @@
+# Color conversion ka matlab hai image ko ek color space se doosre me convert karna.
+# OpenCV me `cv2.cvtColor()` use hota hai.
+# Example color spaces:
+#   cv2.COLOR_BGR2GRAY  → BGR (original) se Grayscale
+#   cv2.COLOR_BGR2RGB   → BGR se RGB
+#   cv2.COLOR_BGR2HSV   → BGR se HSV (Hue, Saturation, Value)
+
 import cv2
 image = cv2.imread('1.jpg')
 

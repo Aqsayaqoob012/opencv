@@ -1,3 +1,7 @@
+# OpenCV me `cv2.rectangle()` use karke image par rectangle draw kar sakte hain.
+# Required parameters: image, top-left corner, bottom-right corner, color (BGR), thickness
+
+
 import cv2
 image = cv2.imread('1.jpg')
 

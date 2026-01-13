@@ -1,3 +1,11 @@
+# Contours ka matlab hai image me objects ke boundaries detect karna.
+# OpenCV me contours find karne ke liye:
+#   1. Grayscale conversion
+#   2. Apply Gaussian Blur (Noise kam karne ke liye)
+#   3. Threshold ya Canny edge detection
+#   4. cv2.findContours() use karte hain
+#   5. cv2.drawContours() se draw karte hain
+
 # 1️⃣ Image Load
 import cv2
 import numpy as np

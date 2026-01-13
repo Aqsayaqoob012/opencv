@@ -1,3 +1,8 @@
+'''
+# Image resizing ka matlab hai image ka size change karna (chhota ya bara karna) without changing content.
+# OpenCV me `cv2.resize()` function use hota hai. Hum width aur height specify karte hain ya scaling factor use kar sakte hain.
+'''
+
 import cv2
 image = cv2.imread('01.jpg')
 

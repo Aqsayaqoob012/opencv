@@ -1,3 +1,6 @@
+# OpenCV me hum `cv2.line()` use karke image par line draw kar sakte hain.
+# Required parameters: image, bottom-left corner co-ordinates, Bottom-right corner co-ordinates , color (BGR), thickness
+
 import cv2
 image = cv2.imread('1.jpg')
 

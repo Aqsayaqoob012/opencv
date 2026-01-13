@@ -1,4 +1,6 @@
 # Extracting the Region of Interest (ROI) 
+# ROI ka matlab hai image ka ek specific portion select karna.
+# Hum numpy slicing use kar ke image ka desired area extract kar sakte hain.
 import cv2 
 image = cv2.imread('1.jpg')
 
