@@ -21,6 +21,27 @@ Median_Blur = cv2.medianBlur(image , 5)     # kernel size (sirf ek number, odd)
 
 # Bilateral Blur
 Bilateral_Blur = cv2.bilateralFilter(image , 9, 75, 75) # diameter ,sigmaColor , sigmaSpace
+'''
+1️⃣ diameter
+
+Ye neighborhood ka size decide karta hai jahan blur calculate hota hai.
+Matlab: har pixel ke kitne surrounding pixels consider honge.
+Example: diameter=5 → 5×5 ke surrounding pixels blur me use honge.
+
+2️⃣ sigmaColor
+
+Ye decide karta hai intensity similarity ka weight.
+Agar sigmaColor high → pixel intensities me difference ignore hoga → zyada blur
+Agar sigmaColor low → sirf similar intensity pixels blur me consider honge → edges preserve rahenge.
+💡 Simple: color similarity ka tolerance
+
+3️⃣ sigmaSpace
+
+Ye decide karta hai spatial distance ka weight.
+Agar sigmaSpace high → door ke pixels bhi contribute karenge → blur wider area me
+Agar sigmaSpace low → sirf nearby pixels contribute karenge → local blur
+💡 Simple: distance ka tolerance
+'''
 
 cv2.imshow('Original Image' , image)
 cv2.imshow('Gaussian Blur' , Gaussian_Blur)

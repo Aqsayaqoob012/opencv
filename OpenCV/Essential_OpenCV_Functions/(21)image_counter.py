@@ -25,8 +25,27 @@ cv2.imshow("Canny Edges", edge)
 
 # 5️⃣ Find Contours
 contours, hierarchy = cv2.findContours(
-    edge , cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_SIMPLE
+    edge , cv2.RETR_EXTERNAL
+      , cv2.CHAIN_APPROX_SIMPLE
 )
+# cv2.CHAIN_APPROX_SIMPLE => Contour ke points ko compress karke store karta hai, unnecessary points ko remove karta hai.
+#  cv2.RETR_EXTERNAL => Sirf external (outer) contours detect karta hai, inner contours ignore karta hai.
+#cv2.RETR_TREE – Saare contours (outer + inner) detect karta hai aur parent-child relationship bhi maintain karta hai.
+# cv2.RETR_CCOMP – Contours ko 2 levels (external + internal) me organize karta hai.
+'''
+contours
+Ye ek list of all detected contours hai.
+Har contour Numpy array of points hota hai, jo us boundary ke coordinates batata hai.
+
+Example structure:
+contours[0]
+# array([[x1, y1], [x2, y2], [x3, y3], ...])
+Matlab: har contour ke sare points store hote hain.
+
+2️⃣ hierarchy
+Ye contours ke relationships ko describe karta hai (parent, child, next, previous).
+'''
+
 # 6️⃣ Print number of contours found
 print('Number Of Counters Found : ' , len(contours))
 
@@ -39,7 +58,6 @@ cv2.imshow("Contours", Contour_image)
 
 
 # 8️⃣ Optional: Draw bounding boxes & contour area
-
 for cnt in contours:
     # x, y → rectangle ka top-left corner  
     # w, h → rectangle ka width & height
@@ -47,6 +65,8 @@ for cnt in contours:
     cv2.rectangle(Contour_image, (x,y), (x+w, y+h), (255,0,0), 2)  # blue rectangle
     area = cv2.contourArea(cnt)
     print("Contour Area:", area)
+
+
 
 cv2.imshow("Contours with Bounding Boxes", Contour_image)
 cv2.waitKey(0)
