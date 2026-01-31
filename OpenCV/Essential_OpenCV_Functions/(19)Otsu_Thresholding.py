@@ -9,6 +9,9 @@ Image bimodal honi chahiye
 Otsu algorithm aisi threshold value choose karta hai:
 jo foreground aur background ka variance minimum kar de
 
+Threshold is chosen so that background aur foreground apni classes me maximum similar ho, 
+aur dono classes ek dusre se clearly alag dikhain
+
 ✔ Otsu sirf grayscale image par kaam karta hai
 ❌ Color image par nahi
 '''
@@ -16,11 +19,15 @@ import cv2
 image = cv2.imread('output.jpg')
 img = cv2.cvtColor(image , cv2.COLOR_BGR2GRAY)
 
-thresh1 = cv2.Threshold(img , 255 ,cv2.ADAPTIVE_THRESH_MEAN_C,
-                                cv2.THRESH_BINARY, 199, 5)
+# cv2.threshold(image, threshold_value, max_value, method)
+# Threshold value ko 0 rakhte hain, Otsu khud calculate karega
+ret, thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
-cv2.imshow('Adaptive Mean', thresh1)
-cv2.imshow('Adaptive Gaussian', thresh2)
+print("Calculated Otsu Threshold:", ret)
+
+
+cv2.imshow('Original', img)
+cv2.imshow('Otsu Thresholded', thresh)
 
 
 

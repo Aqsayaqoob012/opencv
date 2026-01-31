@@ -4,7 +4,10 @@
 #   2. cv2.blur()           → Average blur
 #   3. cv2.medianBlur()     → Median blur (noise reduction ke liye best)
 # Kernel size (k,k) jitna bada hoga, blur utna zyada hoga.
-
+# Kernel size basically decides kitne surrounding pixels ko use karke blur calculate karna hai. 
+# Zyada bada kernel → zyada blur; chhota kernel → subtle blur.
+# Image blurring ya convolution me kernel ko har pixel ke upar center karke apply karte hain.
+# Agar kernel odd size ka ho (3×3, 5×5), to exact center pixel clearly define hota hai.
 import cv2
 image = cv2.imread('01.jpg')
 
